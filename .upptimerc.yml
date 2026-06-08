@@ -1,22 +1,13 @@
 # Upptime configuration for status.isaphia.com
 # Docs: https://upptime.js.org/docs/configuration
 #
-# Polls each endpoint every 5 minutes from GitHub-hosted runners (external to
-# DigitalOcean), computes 90-day uptime %, and publishes a static status site
+# Polls each endpoint every 5 minutes from GitHub-hosted runners, computes 90-day uptime %, and publishes a static status site
 # to GitHub Pages. Free. No infra to maintain.
 
 owner: nano6yt3            # GitHub username/org that hosts the status repo
 repo: isaphia-status       # Name of the new repo you'll create from upptime/upptime
 
 sites:
-  # Core customer-facing surface only. Deliberately excluded:
-  #   - isaphia.com (marketing site) — not part of the product runtime;
-  #     an outage there doesn't affect customers using the platform.
-  #   - analytics.isaphia.com (Umami tracker) — internal telemetry only;
-  #     its downtime is invisible to customers.
-  #   - asm.isaphia.com / hunter.isaphia.com (Contabo UAT) — being
-  #     decommissioned. Add the new DO-hosted UAT hostnames here when
-  #     they're stood up.
   - name: Dashboard (app.isaphia.com)
     url: https://app.isaphia.com/
     expectedStatusCodes: [200, 301, 302, 304]
@@ -35,12 +26,8 @@ status-website:
   name: Isaphia
   introTitle: "**Isaphia Status** — operational dashboard for app.isaphia.com and related services."
   introMessage: |
-    This page is hosted on GitHub Pages and is independent of DigitalOcean
-    infrastructure — so it stays online even when our Prod droplets are not.
-    Probes run every 5 minutes from GitHub-hosted runners outside our network.
-  # Single-link navbar — drops the default "GitHub" link to the source repo
-  # so the published status page doesn't advertise the implementation behind
-  # it. Customers don't need to see the repo; that's an operator detail.
+    This page is hosted independently of app.isaphia.com prod infrastructure — so it stays online even when our Prod env is not.
+    Probes run every 5 minutes from GitHub-hosted runners outside the network.
   navbar:
     - title: Status
       href: /
