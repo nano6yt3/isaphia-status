@@ -1,31 +1,77 @@
-# Change these first
-owner: upptime # Your GitHub organization or username, where this repository lives
-repo: upptime # The name of this repository
+# Upptime configuration for status.isaphia.com
+# Docs: https://upptime.js.org/docs/configuration
+#
+# Polls each endpoint every 5 minutes from GitHub-hosted runners (external to
+# DigitalOcean), computes 90-day uptime %, and publishes a static status site
+# to GitHub Pages. Free. No infra to maintain.
+
+owner: nano6yt3            # GitHub username/org that hosts the status repo
+repo: isaphia-status       # Name of the new repo you'll create from upptime/upptime
 
 sites:
-  - name: Google
-    url: https://www.google.com
-  - name: Wikipedia
-    url: https://en.wikipedia.org
-  - name: Hacker News
-    url: https://news.ycombinator.com
-  - name: Test Broken Site
-    url: https://thissitedoesnotexist.koj.co
+  - name: Dashboard (app.isaphia.com)
+    url: https://app.isaphia.com/
+    expectedStatusCodes: [200, 301, 302, 304]
+    maxResponseTime: 5000
 
+  - name: API health
+    url: https://app.isaphia.com/api/health
+    expectedStatusCodes: [200]
+    maxResponseTime: 3000
+    # Strong signal: the API also tells us if it lost its DB.
+    bodyKeyword: "ok"
+
+  - name: Marketing site
+    url: https://isaphia.com/
+    expectedStatusCodes: [200, 301, 302, 304]
+    maxResponseTime: 5000
+
+  - name: Analytics tracker (Umami)
+    url: https://analytics.isaphia.com/script.js
+    expectedStatusCodes: [200]
+    maxResponseTime: 3000
+
+  # asm.isaphia.com and hunter.isaphia.com are deliberately NOT monitored:
+  # the Contabo staging box is being decommissioned. When UAT moves to a DO
+  # droplet (planned), add the new hostnames here.
+
+# Optional but recommended:
 status-website:
-  # Add your custom domain name, or remove the `cname` line if you don't have a domain
-  # Uncomment the `baseUrl` line if you don't have a custom domain and add your repo name there
-  cname: demo.upptime.js.org
-  # baseUrl: /your-repo-name
-  logoUrl: https://raw.githubusercontent.com/upptime/upptime.js.org/master/static/img/icon.svg
-  name: Upptime
-  introTitle: "**Upptime** is the open-source uptime monitor and status page, powered entirely by GitHub."
-  introMessage: This is a sample status page which uses **real-time** data from our [GitHub repository](https://github.com/upptime/upptime). No server required — just GitHub Actions, Issues, and Pages. [**Get your own for free**](https://github.com/upptime/upptime)
+  cname: status.isaphia.com    # custom domain for the published status page
+  name: Isaphia
+  introTitle: "**Isaphia Status** — operational dashboard for app.isaphia.com and related services."
+  introMessage: |
+    This page is hosted on GitHub Pages and is independent of DigitalOcean
+    infrastructure — so it stays online even when our Prod droplets are not.
+    Probes run every 5 minutes from GitHub-hosted runners outside our network.
   navbar:
     - title: Status
       href: /
     - title: GitHub
-      href: https://github.com/$OWNER/$REPO
+      href: https://github.com/nano6yt3/isaphia-status
 
-# Upptime also supports notifications, assigning issues, and more
-# See https://upptime.js.org/docs/configuration
+# Notifier: send a Slack message when a check goes down/up. Wire NOTIFICATION_*
+# secrets in the repo settings if you want this. Comment out otherwise.
+# notifications:
+#   - type: slack
+#     channel: "#status"
+
+# Polling cadence + retention.
+# 5-min polling = up to 8,640 datapoints per check per month. Free GH Actions
+# minutes easily cover this on a public repo. Drop to "10m" if you ever move
+# to a private repo and care about the minutes.
+delay: 5
+liveness: 5
+graphs: true
+summaryStartDate: "2026-06-07"
+
+# Skip-list for known-degraded endpoints during incident windows.
+# i18n / branding tweaks lives here too.
+i18n:
+  responseTime: Response Time
+  uptime: Uptime
+  pastIncidents: Past Incidents
+  status: Status
+
+assignees:
+  - nano6yt3            # who gets a GitHub issue auto-opened when a check goes down
