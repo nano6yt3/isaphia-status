@@ -21,12 +21,12 @@ sites:
     # Strong signal: the API also tells us if it lost its DB.
     bodyKeyword: "ok"
 
-  - name: Marketing site
-    url: https://isaphia.com/
+  - name: Website
+    url: https://isaphia.com
     expectedStatusCodes: [200, 301, 302, 304]
     maxResponseTime: 5000
 
-  - name: Analytics tracker (Umami)
+  - name: Analytics tracker
     url: https://analytics.isaphia.com/script.js
     expectedStatusCodes: [200]
     maxResponseTime: 3000
@@ -41,9 +41,9 @@ status-website:
   name: Isaphia
   introTitle: "**Isaphia Status** — operational dashboard for app.isaphia.com and related services."
   introMessage: |
-    This page is hosted on GitHub Pages and is independent of DigitalOcean
-    infrastructure — so it stays online even when our Prod droplets are not.
-    Probes run every 5 minutes from GitHub-hosted runners outside our network.
+    This page is hosted on GitHub Pages and is independent of the production
+    infrastructure — so it stays online even when our Prod assets are not.
+    Probes run every 5 minutes from runners outside our network.
   navbar:
     - title: Status
       href: /
