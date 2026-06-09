@@ -1,7 +1,7 @@
 url: https://app.isaphia.com/api/health
-status: down
-code: 0
-responseTime: 0
-lastUpdated: 2026-06-09T06:32:41.929Z
+status: up
+code: 200
+responseTime: 279
+lastUpdated: 2026-06-09T17:47:01.704Z
 startTime: 2026-06-08T02:24:19.207Z
 generator: Upptime <https://github.com/upptime/upptime>
