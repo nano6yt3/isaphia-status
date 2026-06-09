@@ -4,19 +4,19 @@
     "url": "https://app.isaphia.com/",
     "icon": "https://icons.duckduckgo.com/ip3/app.isaphia.com.ico",
     "slug": "dashboard-app-isaphia-com",
-    "status": "down",
-    "uptime": "99.97%",
-    "uptimeDay": "99.97%",
-    "uptimeWeek": "99.97%",
-    "uptimeMonth": "99.97%",
-    "uptimeYear": "99.97%",
-    "time": 140,
-    "timeDay": 150,
-    "timeWeek": 140,
-    "timeMonth": 140,
-    "timeYear": 140,
+    "status": "up",
+    "uptime": "73.41%",
+    "uptimeDay": "56.37%",
+    "uptimeWeek": "73.41%",
+    "uptimeMonth": "73.41%",
+    "uptimeYear": "73.41%",
+    "time": 153,
+    "timeDay": 192,
+    "timeWeek": 153,
+    "timeMonth": 153,
+    "timeYear": 153,
     "dailyMinutesDown": {
-      "2026-06-09": 0
+      "2026-06-09": 628
     }
   },
   {
@@ -24,17 +24,19 @@
     "url": "https://app.isaphia.com/api/health",
     "icon": "https://icons.duckduckgo.com/ip3/app.isaphia.com.ico",
     "slug": "api-health",
-    "status": "down",
-    "uptime": "100.00%",
-    "uptimeDay": "100.00%",
-    "uptimeWeek": "100.00%",
-    "uptimeMonth": "100.00%",
-    "uptimeYear": "100.00%",
-    "time": 114,
-    "timeDay": 97,
-    "timeWeek": 114,
-    "timeMonth": 114,
-    "timeYear": 114,
-    "dailyMinutesDown": {}
+    "status": "up",
+    "uptime": "73.44%",
+    "uptimeDay": "56.42%",
+    "uptimeWeek": "73.44%",
+    "uptimeMonth": "73.44%",
+    "uptimeYear": "73.44%",
+    "time": 138,
+    "timeDay": 188,
+    "timeWeek": 138,
+    "timeMonth": 138,
+    "timeYear": 138,
+    "dailyMinutesDown": {
+      "2026-06-09": 627
+    }
   }
 ]
