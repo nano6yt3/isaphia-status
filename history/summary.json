@@ -5,16 +5,16 @@
     "icon": "https://icons.duckduckgo.com/ip3/app.isaphia.com.ico",
     "slug": "dashboard-app-isaphia-com",
     "status": "up",
-    "uptime": "99.47%",
+    "uptime": "99.48%",
     "uptimeDay": "100.00%",
     "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
-    "uptimeYear": "99.47%",
-    "time": 194,
-    "timeDay": 250,
-    "timeWeek": 223,
-    "timeMonth": 209,
-    "timeYear": 194,
+    "uptimeYear": "99.48%",
+    "time": 196,
+    "timeDay": 314,
+    "timeWeek": 246,
+    "timeMonth": 212,
+    "timeYear": 196,
     "dailyMinutesDown": {
       "2026-06-09": 628
     }
@@ -30,11 +30,11 @@
     "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "99.48%",
-    "time": 170,
-    "timeDay": 259,
-    "timeWeek": 198,
-    "timeMonth": 175,
-    "timeYear": 170,
+    "time": 171,
+    "timeDay": 256,
+    "timeWeek": 217,
+    "timeMonth": 176,
+    "timeYear": 171,
     "dailyMinutesDown": {
       "2026-06-09": 627
     }
