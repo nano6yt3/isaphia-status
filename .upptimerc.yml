@@ -20,6 +20,19 @@ sites:
     # Strong signal: the API also tells us if it lost its DB.
     bodyKeyword: "ok"
 
+  - name: Dashboard (heliosuite.io)
+    url: https://heliosuite.io/
+    expectedStatusCodes: [200, 301, 302, 304]
+    maxResponseTime: 5000
+
+  - name: API health (heliosuite.io)
+    url: https://heliosuite.io/api/health
+    expectedStatusCodes: [200]
+    maxResponseTime: 3000
+    # Same backend as app.isaphia.com, but this monitor also catches
+    # heliosuite.io-specific breakage: cert expiry on that SAN, DNS, routing.
+    bodyKeyword: "ok"
+
 # Optional but recommended:
 status-website:
   cname: status.isaphia.com    # custom domain for the published status page
